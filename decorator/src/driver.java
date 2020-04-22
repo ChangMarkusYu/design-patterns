@@ -29,14 +29,13 @@ public class driver {
         System.out.println(order4.getDescription() + ": $" + order4.cost());
 
         int c;
-        try{
+        try {
             InputStream in = new LowerCaseInputStream(new BufferedInputStream(System.in));
-            while((c = in.read()) >= 0) {
-                System.out.print((char)c);
+            while ((c = in.read()) >= 0) {
+                System.out.print((char) c);
             }
             in.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
