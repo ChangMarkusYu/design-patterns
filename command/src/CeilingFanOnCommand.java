@@ -12,6 +12,10 @@ public class CeilingFanOnCommand implements Command {
         ceilingFan.on();
     }
 
+    public void undo() {
+        ceilingFan.off();
+    }
+
     public String toString() {
         return "CeilingFanOnCommand";
     }

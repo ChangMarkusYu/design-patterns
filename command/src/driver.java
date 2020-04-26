@@ -1,7 +1,5 @@
 import Devices.*;
 
-// TODO: add undo function
-
 public class driver {
     public static void main(String[] args) {
         RemoteControl remoteControl = new RemoteControl();
@@ -36,5 +34,7 @@ public class driver {
                 remoteControl.offButtonPushed(i);
             }
         }
+
+        remoteControl.undoButtonPushed();
     }
 }

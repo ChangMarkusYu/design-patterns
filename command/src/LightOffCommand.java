@@ -12,6 +12,10 @@ public class LightOffCommand implements Command {
         light.off();
     }
 
+    public void undo() {
+        light.on();
+    }
+
     public String toString() {
         return "LightOffCommand";
     }

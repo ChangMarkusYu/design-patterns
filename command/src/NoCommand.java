@@ -5,6 +5,10 @@ public class NoCommand implements Command {
         return;
     }
 
+    public void undo() {
+        return;
+    }
+
     public String toString() {
         return "NoCommand";
     }

@@ -1,6 +1,7 @@
 public class RemoteControl {
-    Command[] onCommands;
-    Command[] offCommands;
+    private Command[] onCommands;
+    private Command[] offCommands;
+    private Command undoCommand;
 
     private final int COMMAND_NUM = 6;
 
@@ -13,6 +14,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommand = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -25,10 +27,16 @@ public class RemoteControl {
 
     public void onButtonPushed(int slot) {
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
     }
 
     public void offButtonPushed(int slot) {
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonPushed() {
+        undoCommand.undo();
     }
 
     public String toString() {
